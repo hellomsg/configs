@@ -1,0 +1,20 @@
+```bash
+alias ll="ls -laG"
+
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
+}
+PS1='\[\033[01;37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\]\$'
+
+function tag-commit() {
+git tag -a "release-vv1-$(git rev-parse --short HEAD)" -m "$(git rev-parse HEAD)"
+git push origin --tags
+}
+
+export PATH=/usr/local/mysql/bin:$PATH
+export PATH=/Users/xxx/apache-maven-3.5.0/bin:$PATH
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/
+function _get_tree(){ ls -alR | while read LINE; do   echo $LINE | grep ":$" > /dev/null;   if [ $? -eq 0 ];   then     VAR=$(echo $LINE | grep ":$"| sed -e 's/:$//' -e 's/[^-][^\/]*\//--/g' -e 's/^/   /' -e 's/-/|/' | tee /dev/tty);   fi;   echo $LINE | grep "^-" > /dev/null;   if [ $? -eq 0 ];   then     size=${#VAR};     for i in $(eval echo "{1..$size}"); do echo -n ' '; done;     echo -n '..';     echo $LINE | cut -d ' ' -f9;   fi; done; };
+
+alias get_tree='_get_tree'
+```

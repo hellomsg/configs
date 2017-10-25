@@ -2,7 +2,7 @@
 `~$ pip3 install virtualenv`
 
 ### create a empty virtual env
-`~$ virtualenv venv`
+`~$ virtualenv --python=/usr/bin/python3 venv`
 
 ### activate the virtual env
 `source venv/bin/activate`

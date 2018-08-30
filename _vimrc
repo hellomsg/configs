@@ -1,5 +1,4 @@
 set expandtab
 set noautoindent
-set tabstop=2
+set tabstop=4
 set nolist
-set paste

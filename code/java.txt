@@ -1,0 +1,8 @@
+public static JSONObject parseResultSet(ResultSet resultSet) throws SQLException {
+        JSONObject jsonObject = new JSONObject();
+        ResultSetMetaData metaData = resultSet.getMetaData();
+        for (int i=1; i<=metaData.getColumnCount(); i++) {
+            jsonObject.put(metaData.getColumnLabel(i), resultSet.getString(i));
+        }
+        return jsonObject;
+    }

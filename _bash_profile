@@ -1,5 +1,6 @@
 alias ll="ls -laG"
 alias ip="curl cip.cc"
+alias ios_date="date '+%Y-%m-%d %H:%M:%S'"
 
 function tag-commit() {
 git tag -a "release-vv1-$(git rev-parse --short HEAD)" -m "$(git rev-parse HEAD)"

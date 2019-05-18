@@ -9,4 +9,4 @@ inoremap ' ''<ESC>i
 inoremap " ""<ESC>i
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
-inoremap { {<CR>}<ESC>O
+inoremap { {<CR>}<ESC>O<Tab>

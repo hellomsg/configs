@@ -12,3 +12,6 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 alias jshell10=`/usr/libexec/java_home -v 10`/bin/jshell
 
 export PATH="/usr/local/sbin:$PATH"
+
+# golang
+export GOPROXY=https://goproxy.cn

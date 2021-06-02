@@ -10,3 +10,4 @@ inoremap " ""<ESC>i
 inoremap ( ()<ESC>i
 inoremap [ []<ESC>i
 inoremap { {<CR>}<ESC>O<Tab>
+autocmd BufNewFile,BufRead *.sh inoremap { {}<Esc>i

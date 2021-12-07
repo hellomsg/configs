@@ -15,3 +15,6 @@ export PATH="/usr/local/sbin:$PATH"
 
 # golang
 export GOPROXY=https://goproxy.cn
+
+# cargo
+export CARGO_HTTP_MULTIPLEXING=false

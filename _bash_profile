@@ -1,6 +1,9 @@
-alias ll="ls -laG"
+alias ll="ls -l -a -G"
 alias cip="curl cip.cc"
 alias iso_date="date '+%Y-%m-%d %H:%M:%S'"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 function tag-commit() {
 git tag -a "release-vv1-$(git rev-parse --short HEAD)" -m "$(git rev-parse HEAD)"
@@ -18,3 +21,21 @@ export GOPROXY=https://goproxy.cn
 
 # cargo
 export CARGO_HTTP_MULTIPLEXING=false
+
+# proxy
+function proxy() {
+    export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;
+    npm config set proxy "http://127.0.0.1:1087";
+    npm config set https-proxy "http://127.0.0.1:1087";
+}
+function unproxy() {
+    unset http_proxy;
+    unset https_proxy;
+    npm config delete proxy;
+    npm config delete https-proxy;
+}
+
+# ip
+function ip() {
+    echo $(ifconfig | grep 'inet 10' | awk '{print $2}')
+}
